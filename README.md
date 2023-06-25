@@ -26,6 +26,13 @@ We provide `environment.yml` to help you setup a conda environment.
 conda env create -f environment.yml
 ```
 
+
+Then build aabb module.
+
+```shell
+python setup.py build_ext --inplace
+```
+
 ## Dataset
 ### NeRF's  real forward-facing dataset
 **Download:** [Undistorted front facing dataset](https://vistec-my.sharepoint.com/:f:/g/personal/pakkapon_p_s19_vistec_ac_th/ErjPRRL9JnFIp8MN6d1jEuoB3XVoxJkffPjfoPyhHkj0dg?e=qIunN0)
