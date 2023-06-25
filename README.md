@@ -52,28 +52,20 @@ The training code will automatically prepare a scene for you. You may have to tu
 
 
 ## Training
-python train_progressively.py -scene data/fern_undistort -model_dir model/fern_32 -layers 32 -sublayers 1 -cv2resize -hidden 256 -tb_toc 20 -ray2000 
-Run with the paper's config
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layer ${NUM_OF_LAYERS} -sublayer ${NUM_OF_SUBLAYERS} -cv2resize
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT}
 ```
 
 This implementation uses [scikit-image](https://scikit-image.org/) to resize images during training by default. The results and scores in the paper are generated using OpenCV's resize function. If you want the same behavior, please add `-cv2resize` argument.
 
-Note that this code is tested on an Nvidia V100 32GB and 4x RTX 2080Ti GPU.
+Note that this code is tested on two Nvidia V100 32GB.
 
 For a GPU/GPUs with less memory (e.g., a single RTX 2080Ti), you can run using the following command:
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -http -layers 12 -sublayers 6 -hidden 256
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layers 12 -sublayers 6 -hidden 256
 ```
 Note that when your GPU runs ouut of memeory, you can try reducing the number of layers, sublayers, and sampled rays.
 
-## Rendering
-
-To generate a WebGL viewer and a video result.
-```shell
-python train.py -scene ${scene} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -predict -http
-```
 
 ### Video rendering
 
@@ -83,14 +75,6 @@ To generate a video that matches the real forward-facing rendering path, add `-n
 
 ## Citation
 
-```
-@inproceedings{Wizadwongsa2021NeX,
-    author = {Wizadwongsa, Suttisak and Phongthawee, Pakkapon and Yenphraphai, Jiraphon and Suwajanakorn, Supasorn},
-    title = {NeX: Real-time View Synthesis with Neural Basis Expansion},
-    booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
-    year = {2021},
-}
-```
 
-## Visit us 🦉
-[![Vision & Learning Laboratory](https://i.imgur.com/hQhkKhG.png)](https://vistec.ist/vision) [![VISTEC - Vidyasirimedhi Institute of Science and Technology](https://i.imgur.com/4wh8HQd.png)](https://vistec.ist/)
+## Acknowledge
+Our repo is developed based on [NeX](https://github.com/nex-mpi/nex-code/)
