@@ -51,19 +51,22 @@ The training code will automatically prepare a scene for you. You may have to tu
 
 
 ## Training
+
+python train_progressive.py -scene data/forward/fortress_undistort -model_dir model/fortress_192layers_c2f -epochs 4000 -before_decay 0 -n_max 384 -ray 4 -cv2resize -layers 192 -sublayers 1 -size_patch 36 -offset 216 -tb_toc 100 -gamma 0.0006 -all_gpu
+
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT}
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -epochs 4000 -before_decay 0 -n_max 384 -ray 4  -layers 192 -sublayers 1 -size_patch 36 -offset 216  -gamma 0.0006 -all_gpu
 ```
 
 This implementation uses [scikit-image](https://scikit-image.org/) to resize images during training by default. The results and scores in the paper are generated using OpenCV's resize function. If you want the same behavior, please add `-cv2resize` argument.
 
 Note that this code is tested on two Nvidia V100 32GB.
 
-For a GPU/GPUs with less memory (e.g., a single RTX 2080Ti), you can run using the following command:
+For a GPU/GPUs with less memory (e.g., a single RTX 3090), you can run using the following command:
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layers 12 -sublayers 6 -hidden 256 -ray 3
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -epochs 4000 -before_decay 0 -n_max 384 -ray 4  -layers 128 -sublayers 1 -size_patch 36 -offset 216  -gamma 0.0006
 ```
-Note that when your GPU runs ouut of memeory, you can try reducing the number of layers, sublayers, and sampled rays.
+Note that when your GPU runs out of memeory, you can try reducing the number of layers, sublayers, and sampled rays.
 
 ## Citation
 
