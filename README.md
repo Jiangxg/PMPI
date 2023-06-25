@@ -36,7 +36,7 @@ However, you can try running other scenes from [Local lightfield fusion](https:/
 
 ### Using your own images.
 
-Running NeX on your own images. You need to install [COLMAP](https://colmap.github.io/) on your machine.
+Running PMPI on your own images. You need to install [COLMAP](https://colmap.github.io/) on your machine.
 
 Then, put your images into a directory following this structure
 ```
