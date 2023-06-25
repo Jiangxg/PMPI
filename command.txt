@@ -1,9 +1,0 @@
-NeX测试指令（32个平面=32X1）
-
-python train.py -scene data/fern_undistort -model_dir model/fern_32 -layers 32 -sublayers 1 -cv2resize -hidden 256 -tb_toc 20 -ray2000 
-
-
-当前工程测试指令（32个平面=32X1，patch尺寸默认为36X36）
-在epoch = 1500, 2000, 2500, 3000 处进行coarse to fine操作
-
-python train.py -scene data/fern_undistort -model_dir model/fern -layers 40 -sublayers 1 -cv2resize -tb_toc 20 -ray 4 -gamma 0.0006 -offset 216 -size_patch 18  -before_decay 3000 
