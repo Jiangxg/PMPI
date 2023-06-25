@@ -62,19 +62,12 @@ Note that this code is tested on two Nvidia V100 32GB.
 
 For a GPU/GPUs with less memory (e.g., a single RTX 2080Ti), you can run using the following command:
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layers 12 -sublayers 6 -hidden 256
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layers 12 -sublayers 6 -hidden 256 -ray 1000
 ```
 Note that when your GPU runs ouut of memeory, you can try reducing the number of layers, sublayers, and sampled rays.
-
-
-### Video rendering
-
-To generate a video that matches the real forward-facing rendering path, add `-nice_llff` argument, or `-nice_shiny` for shiny dataset
-
-
 
 ## Citation
 
 
 ## Acknowledge
-Our repo is developed based on [NeX](https://github.com/nex-mpi/nex-code/)
+Our repo is developed based on [NeX](https://github.com/nex-mpi/nex-code/) and [NSVF](https://github.com/facebookresearch/NSVF)
