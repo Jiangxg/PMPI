@@ -12,7 +12,6 @@ achieves more dense and effective samplings without adding computing resources b
 
 ## Table of contents
 -----
-  * [Getting started](#Getting-started)
   * [Installation](#Installation)
   * [Dataset](#Dataset)
   * [Training](#Training)
