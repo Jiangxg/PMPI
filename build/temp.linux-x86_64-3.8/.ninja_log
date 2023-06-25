@@ -1,5 +1,0 @@
-# ninja log v5
-0	6945	1635783882	/home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect_gpu.o	9aa21424c83d6eae
-0	12017	1635783887	/home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect.o	aff5b62e97b9a3f2
-4	23496	1644766662000000000	/home/um202172460/jxg/PMPI/PMPI_progressive/build/temp.linux-x86_64-3.8/aabb/src/intersect_gpu.o	56ec7f1377e7baf9
-1	37836	1644766676000000000	/home/um202172460/jxg/PMPI/PMPI_progressive/build/temp.linux-x86_64-3.8/aabb/src/intersect.o	fca7d74f8a912e37
