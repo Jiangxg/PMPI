@@ -20,16 +20,6 @@ achieves more dense and effective samplings without adding computing resources b
   * [Citation](#citation)
 ------
 
-## Getting started
-
-```shell
-conda env create -f environment.yml
-./download_demo_data.sh
-conda activate nex
-python train.py -scene data/crest_demo -model_dir crest -http
-tensorboard --logdir runs/
-```
-
 ## Installation
 We provide `environment.yml` to help you setup a conda environment. 
 
@@ -38,26 +28,12 @@ conda env create -f environment.yml
 ```
 
 ## Dataset
-### Shiny dataset
-
-**Download:**  [Shiny dataset](https://vistec-my.sharepoint.com/:f:/g/personal/pakkapon_p_s19_vistec_ac_th/EnIUhsRVJOdNsZ_4smdhye0B8z0VlxqOR35IR3bp0uGupQ?e=TsaQgM). 
-
-We provide 2 directories named `shiny` and `shiny_extended`. 
-- `shiny` contains benchmark scenes used to report the scores in our paper.
-- `shiny_extended` contains additional challenging scenes used on our website [project page](https://nex-mpi.github.io/) and [video](https://www.youtube.com/watch?v=HyfkF7Z-ddA)
-
-
 ### NeRF's  real forward-facing dataset
 **Download:** [Undistorted front facing dataset](https://vistec-my.sharepoint.com/:f:/g/personal/pakkapon_p_s19_vistec_ac_th/ErjPRRL9JnFIp8MN6d1jEuoB3XVoxJkffPjfoPyhHkj0dg?e=qIunN0)
 
 For real forward-facing dataset, NeRF is trained with the raw images, which may contain lens distortion. But we use the undistorted images provided by COLMAP.
 
 However, you can try running other scenes from [Local lightfield fusion](https://github.com/Fyusion/LLFF) (Eg. [airplant](https://github.com/Fyusion/LLFF/blob/master/imgs/viewer.gif)) without any changes in the dataset files. In this case, the images are not automatically undistorted.
-
-### Deepview's spaces dataset
-**Download:** [Modified spaces dataset](https://vistec-my.sharepoint.com/:f:/g/personal/pakkapon_p_s19_vistec_ac_th/Euiqlm45zFlItB7eJToHFUUBrIpWH3ehbyUUvpLAL5ulgg?e=Oh0JYN)
-
-We slightly modified the file structure of Spaces dataset in order to determine the plane placement and split train/test sets. 
 
 ### Using your own images.
 
@@ -76,10 +52,10 @@ The training code will automatically prepare a scene for you. You may have to tu
 
 
 ## Training
-
+python train_progressively.py -scene data/fern_undistort -model_dir model/fern_32 -layers 32 -sublayers 1 -cv2resize -hidden 256 -tb_toc 20 -ray2000 
 Run with the paper's config
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -http
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -layer ${NUM_OF_LAYERS} -sublayer ${NUM_OF_SUBLAYERS} -cv2resize
 ```
 
 This implementation uses [scikit-image](https://scikit-image.org/) to resize images during training by default. The results and scores in the paper are generated using OpenCV's resize function. If you want the same behavior, please add `-cv2resize` argument.
