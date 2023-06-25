@@ -1,15 +1,18 @@
-# NeX: Real-time View Synthesis with Neural Basis Expansion
+# PMPI: Patch-based Multiplane Images for learning View Synthesis
 
-### [Project Page](https://nex-mpi.github.io/) | [Video](https://www.youtube.com/watch?v=HyfkF7Z-ddA) | [Paper](https://arxiv.org/pdf/2103.05606.pdf) | [COLAB](https://colab.research.google.com/drive/1hXVvYdAwLA0EFg2zrafJUE0bFgB_F7PU#scrollTo=TFbN4mrJCp8o&sandboxMode=true) | [Shiny Dataset](https://vistec-my.sharepoint.com/:f:/g/personal/pakkapon_p_s19_vistec_ac_th/EnIUhsRVJOdNsZ_4smdhye0B8z0VlxqOR35IR3bp0uGupQ?e=TsaQgM)
+We present PMPI, an explicit and plane-based model for real-time view synthesis. Our PMPI
+achieves more dense and effective samplings without adding computing resources by assembling patches around visible contents.
 
-[![Open NeX in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hXVvYdAwLA0EFg2zrafJUE0bFgB_F7PU#scrollTo=TFbN4mrJCp8o&sandboxMode=true)
+## PMPI model
+![image](https://github.com/Jiangxg/PMPI/assets/41377695/e7f1edcc-6933-4ff4-91e7-1245b3d2a980)
 
-[![NeX](https://i.imgur.com/TfXtYdC.png)](https://www.youtube.com/watch?v=HyfkF7Z-ddA)
+## Our method for learning PMPI
+![image](https://github.com/Jiangxg/PMPI/assets/41377695/0a80d94c-1bac-46e1-b562-b009656c3d48)
 
-We present NeX, a new approach to novel view synthesis based on enhancements of multiplane image (MPI) that can reproduce NeXt-level view-dependent effects---in real time. Unlike traditional MPI that uses a set of simple RGBα planes, our technique models view-dependent effects by instead parameterizing each pixel as a linear combination of basis functions learned from a neural network. Moreover, we propose a hybrid implicit-explicit modeling strategy that improves upon fine detail and produces state-of-the-art results. Our method is evaluated on benchmark forward-facing datasets as well as our newly-introduced dataset designed to test the limit of view-dependent modeling with significantly more challenging effects such as the rainbow reflections on a CD. Our method achieves the best overall scores across all major metrics on these datasets with more than 1000× faster rendering time than the state of the art.
+
 ## Table of contents
 -----
-  * [TL;DR](#Getting-started)
+  * [Getting started](#Getting-started)
   * [Installation](#Installation)
   * [Dataset](#Dataset)
   * [Training](#Training)
