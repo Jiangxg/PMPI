@@ -1,0 +1,38 @@
+running build_ext
+building 'aabb._ext' extension
+creating /home/jxg/jxg/PMPI/build
+creating /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8
+creating /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb
+creating /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src
+Emitting ninja build file /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect_gpu.o.d -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/TH -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/jxg/anaconda3/envs/nex/include/python3.8 -c -c /home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu -o /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O2 -I/home/jxg/jxg/PMPI/aabb/include -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++14
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(86): warning: expression has no effect
+
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(87): warning: expression has no effect
+
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(88): warning: expression has no effect
+
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(86): warning: expression has no effect
+
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(87): warning: expression has no effect
+
+/home/jxg/jxg/PMPI/aabb/src/intersect_gpu.cu(88): warning: expression has no effect
+
+[2/2] c++ -MMD -MF /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect.o.d -pthread -B /home/jxg/anaconda3/envs/nex/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/TH -I/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/jxg/anaconda3/envs/nex/include/python3.8 -c -c /home/jxg/jxg/PMPI/aabb/src/intersect.cpp -o /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect.o -O2 -I/home/jxg/jxg/PMPI/aabb/include -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/ATen/Parallel.h:140:0,
+                 from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/utils.h:3,
+                 from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/nn/cloneable.h:5,
+                 from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/nn.h:3,
+                 from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/all.h:13,
+                 from /home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/torch/extension.h:4,
+                 from /home/jxg/jxg/PMPI/aabb/src/intersect.cpp:1:
+/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/include/ATen/ParallelOpenMP.h:83:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel for if ((end - begin) >= grain_size)
+ 
+creating build/lib.linux-x86_64-3.8
+creating build/lib.linux-x86_64-3.8/aabb
+g++ -pthread -shared -B /home/jxg/anaconda3/envs/nex/compiler_compat -L/home/jxg/anaconda3/envs/nex/lib -Wl,-rpath=/home/jxg/anaconda3/envs/nex/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect.o /home/jxg/jxg/PMPI/build/temp.linux-x86_64-3.8/aabb/src/intersect_gpu.o -L/home/jxg/anaconda3/envs/nex/lib/python3.8/site-packages/torch/lib -L/usr/local/cuda-11.1/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.8/aabb/_ext.cpython-38-x86_64-linux-gnu.so -fopenmp
+copying build/lib.linux-x86_64-3.8/aabb/_ext.cpython-38-x86_64-linux-gnu.so -> aabb
