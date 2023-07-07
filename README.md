@@ -31,6 +31,7 @@ Then build aabb module.
 
 ```shell
 python setup.py build_ext --inplace
+pip install -e ./
 ```
 
 ## Dataset
