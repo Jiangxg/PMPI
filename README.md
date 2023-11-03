@@ -72,7 +72,7 @@ Note that this code is tested on two Nvidia V100 32GB.
 
 For a GPU/GPUs with less memory (e.g., a single RTX 3090), you can run using the following command:
 ```shell
-python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -epochs 4000 -before_decay 0 -n_max 384 -ray 4  -layers 128 -sublayers 1 -size_patch 36 -offset 216  -gamma 0.0006
+python train.py -scene ${PATH_TO_SCENE} -model_dir ${MODEL_TO_SAVE_CHECKPOINT} -epochs 4000 -before_decay 0 -n_max 256 -ray 4  -layers 64 -sublayers 1 -size_patch 36 -offset 216  -gamma 0.0006
 ```
 Note that when your GPU runs out of memeory, you can try reducing the number of layers, sublayers, and sampled rays.
 
